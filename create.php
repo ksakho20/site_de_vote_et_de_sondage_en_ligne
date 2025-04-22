@@ -6,7 +6,7 @@
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Accès interdit.');
 }
-/
+
 
 // 1. Récupération et nettoyage
 $title   = trim($_POST['title'] ?? '');
