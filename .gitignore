@@ -1,0 +1,9 @@
+# données dynamiques
+data/*.json
+
+# artéfacts et IDE
+*.log
+.DS_Store
+
+# dépendances éventuelles
+vendor/
