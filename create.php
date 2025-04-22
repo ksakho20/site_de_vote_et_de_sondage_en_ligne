@@ -1,4 +1,13 @@
 <?php
+// create.php
+// Ce fichier permet de créer un nouveau sondage
+// et de le sauvegarder au format JSON.
+// On commence par vérifier que le formulaire a été soumis
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die('Accès interdit.');
+}
+/
+
 // 1. Récupération et nettoyage
 $title   = trim($_POST['title'] ?? '');
 $options = array_filter(array_map('trim', $_POST['options'] ?? []));
