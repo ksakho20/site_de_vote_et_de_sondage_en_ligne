@@ -15,32 +15,59 @@ $poll = json_decode(file_get_contents($file), true);
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title><?= htmlspecialchars($poll['title']) ?></title>
+  <title>Mon Sondagiste • <?= htmlspecialchars($poll['title']) ?></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/vote.js" defer></script>
 </head>
 <body>
-  <h1><?= htmlspecialchars($poll['title']) ?></h1>
+  <!-- Header commun -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-logo"><a href="index.php">Mon Sondagiste</a></h1>
+      <nav class="site-nav">
+        <a href="index.php">Créer</a>
+        <a href="#">À propos</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Formulaire de vote -->
-  <form id="vote-form">
-    <!-- On garde l’ID du sondage en champ caché -->
-    <input type="hidden" name="id" value="<?= htmlspecialchars($poll['id']) ?>">
+  <!-- Contenu principal -->
+  <main class="site-main container">
+    <!-- Carte de vote -->
+    <div class="card">
+      <h1><?= htmlspecialchars($poll['title']) ?></h1>
 
-    <?php foreach ($poll['options'] as $idx => $opt): ?>
-      <div>
-        <input type="radio"
-               id="opt<?= $idx ?>"
-               name="choice"
-               value="<?= $idx ?>">
-        <label for="opt<?= $idx ?>"><?= htmlspecialchars($opt['label']) ?></label>
-      </div>
-    <?php endforeach; ?>
+      <form id="vote-form">
+        <input type="hidden" name="id" value="<?= htmlspecialchars($poll['id']) ?>">
 
-    <button type="submit">Voter</button>
-  </form>
+        <?php foreach ($poll['options'] as $idx => $opt): ?>
+          <div class="form-option">
+            <input
+              type="radio"
+              id="opt<?= $idx ?>"
+              name="choice"
+              value="<?= $idx ?>">
+            <label for="opt<?= $idx ?>"><?= htmlspecialchars($opt['label']) ?></label>
+          </div>
+        <?php endforeach; ?>
 
-  <!-- Zone où s’afficheront les résultats -->
-  <div id="results"></div>
+        <button type="submit">Voter</button>
+      </form>
+    </div>
+
+    <!-- Carte des résultats -->
+    <div class="card">
+      <div id="results"></div>
+    </div>
+  </main>
+
+  <!-- Footer commun -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Mon Sondagiste • <a href="#">Mentions légales</a></p>
+    </div>
+  </footer>
 </body>
 </html>
