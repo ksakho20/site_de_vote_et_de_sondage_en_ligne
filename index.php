@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Créer un sondage</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <script src="js/create.js" defer></script>
+
 </head>
 <body>
     <div class="container">

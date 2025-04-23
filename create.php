@@ -6,6 +6,14 @@
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Accès interdit.');
 }
+// On vérifie que le dossier de sauvegarde existe
+if (!is_dir(__DIR__ . '/data')) {
+    mkdir(__DIR__ . '/data', 0777, true);
+}
+// On vérifie que le fichier de sauvegarde est accessible
+if (!is_writable(__DIR__ . '/data')) {
+    die('Le dossier de sauvegarde n\'est pas accessible.');
+}
 
 
 // 1. Récupération et nettoyage

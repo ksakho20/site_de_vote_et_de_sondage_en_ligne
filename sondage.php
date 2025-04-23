@@ -17,7 +17,7 @@ $poll = json_decode(file_get_contents($file), true);
   <meta charset="UTF-8">
   <title><?= htmlspecialchars($poll['title']) ?></title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script>
+  <script src="js/vote.js" defer></script>
 </head>
 <body>
   <h1><?= htmlspecialchars($poll['title']) ?></h1>
