@@ -19,7 +19,7 @@ if (!is_writable(__DIR__ . '/data')) {
 // 1. Récupération et nettoyage
 $title   = trim($_POST['title'] ?? '');
 $options = array_filter(array_map('trim', $_POST['options'] ?? []));
-
+$questions = array_filter(array_map('trim', $_POST['questions'] ?? []));
 // 2. Validation
 if (!$title || count($options) < 2) {
     die('Il faut un titre et au moins deux options.');
@@ -30,6 +30,7 @@ $id = uniqid('poll_');
 $poll = [
     'id'      => $id,
     'title'   => $title,
+    'questions' => $questions,
     'options' => array_map(fn($opt) => ['label'=>$opt,'votes'=>0], $options),
 ];
 
