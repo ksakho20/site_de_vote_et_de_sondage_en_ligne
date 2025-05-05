@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/create.js" defer></script>
+  <script src="./js/create.js" defer></script>
 
 </head>
 <body>
@@ -27,6 +27,16 @@
                 <label for="title">Titre du sondage :</label>
                 <input type="text" name="title" id="title" required>
                 </div>
+                
+                <div id="questions-container">
+                <label>Questions :</label>
+                <div>
+                    <input type="text" name="questions[]" placeholder="Question 1" required>
+                </div>
+                </div>
+                <button type="button" id="add-question">Ajouter une question</button>
+                <br><br>
+
                 <div id="options-container">
                 <label>Options :</label>
                 <div>
