@@ -30,7 +30,7 @@ body {
 
 /* h2 à droite, plus bas */
 .titre-secondaire {
-    text-align: right;
+    text-align: left;
     margin: 20px 30px 10px 0;
     color: #333;
     font-size: 20px;
