@@ -13,7 +13,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: var(--font-sans);
-  background: var(--clr-bg);
+  background: rgb(133, 124, 124);
   color: var(--clr-gray-dark);
   line-height: 1.6;
 }
@@ -145,14 +145,45 @@ button:hover {
   .site-nav a { margin: 0.5rem; }
 }
 
+/* ======== Bloc question (fieldset alternatif) ======== */
 .question-block {
-  margin-bottom: 1.5rem;
+  background: var(--clr-white);
   border: 1px solid var(--clr-gray-light);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
 }
+
+/* Si tu utilises <fieldset>, applique aussi : */
 .question-block legend {
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   color: var(--clr-primary);
+  padding: 0 0.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ======== Alignement options ======== */
+.form-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.form-option input[type="radio"] {
+  margin-right: 0.75rem;
+  /* Sur les navigateurs récents : */
+  accent-color: var(--clr-primary);
+}
+
+/* ======== Résultats par question ======== */
+#results h3 {
+  color: var(--clr-primary);
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+#results .result {
+  margin-bottom: 1rem;
 }

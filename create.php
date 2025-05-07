@@ -1,8 +1,10 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] ?? ''  !== 'POST') {
+
+// log de la méthode dans la console du serveur
+file_put_contents('php://stdout', "▶ METHOD=" . ($_SERVER['REQUEST_METHOD'] ?? 'NULL') . "\n");
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     die('Accès interdit');
 }
-
 // Crée le dossier data si besoin
 $dir = __DIR__ . '/data';
 if (!is_dir($dir)) mkdir($dir, 0755);

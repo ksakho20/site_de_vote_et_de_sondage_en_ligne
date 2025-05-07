@@ -23,31 +23,59 @@
         <div class="card">
             <h1>Créer un nouveau sondage</h1>
             <form action="create.php" method="post" id="create-form">
+                <!-- 1️⃣ Champ titre -->
+                <div class="field">
+                    <label for="title">Titre du sondage :</label>
+                    <input 
+                    type="text" 
+                    name="title" 
+                    id="title" 
+                    placeholder="Entrez le titre" 
+                    required>
+                </div>
+
+                <!-- 2️⃣ Bloc questions dynamique -->
                 <div id="questions-container">
-                    <!-- Bloc prototype invisible, cloné par JS -->
                     <template id="question-template">
                     <div class="question-block" data-idx="{idx}">
                         <div class="field">
                         <label>Question {num} :</label>
-                        <input type="text" name="questions[{idx}]" placeholder="Question {num}" required>
+                        <input 
+                            type="text" 
+                            name="questions[{idx}]" 
+                            placeholder="Question {num}" 
+                            required>
                         </div>
                         <div class="options-container">
                         <div class="field">
-                            <input type="text" name="options[{idx}][]" placeholder="Option 1" required>
+                            <input
+                            type="text"
+                            name="options[{idx}][]"
+                            placeholder="Option 1"
+                            required>
                         </div>
                         <div class="field">
-                            <input type="text" name="options[{idx}][]" placeholder="Option 2" required>
+                            <input
+                            type="text"
+                            name="options[{idx}][]"
+                            placeholder="Option 2"
+                            required>
                         </div>
                         </div>
-                        <button type="button" class="btn-add-option" data-idx="{idx}">Ajouter une option</button>
+                        <button 
+                        type="button"
+                        class="btn-add-option"
+                        data-idx="{idx}">
+                        Ajouter une option
+                        </button>
                     </div>
                     </template>
                 </div>
 
-                <button type="button" id="add-question">Ajouter une question</button>
-                <br><br>
-                <button type="submit">Créer le sondage</button>
-            </form>
+  <button type="button" id="add-question">Ajouter une question</button>
+  <br><br>
+  <button type="submit">Créer le sondage</button>
+</form>
 
         </div>
     </main>

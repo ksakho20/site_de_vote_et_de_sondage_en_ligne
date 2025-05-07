@@ -56,7 +56,6 @@ $poll = json_decode(file_get_contents($file), true);
                 </label>
               </div>
             <?php endforeach; ?>
-
           </fieldset>
         <?php endforeach; ?>
 

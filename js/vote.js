@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderResults(poll) {
     let html = '<h2>Résultats</h2>';
-    poll.questions.forEach((q, qIdx) => {
+    poll.questions.forEach((q) => {
       html += `<h3>${q.label}</h3>`;
       const total = q.options.reduce((s,o)=>s+o.votes,0);
       q.options.forEach(opt => {
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     resultsDiv.innerHTML = html;
   }
+  
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
