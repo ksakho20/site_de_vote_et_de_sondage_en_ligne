@@ -1,0 +1,64 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: url('../realiser-un-sondage') no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* Conteneur centré seulement pour le formulaire */
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto; /* Centre horizontalement et ajoute de l'espace en haut */
+}
+
+/* h1 tout en haut, centré */
+.titre-principal {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* h2 à droite, plus bas */
+.titre-secondaire {
+    text-align: right;
+    margin: 20px 30px 10px 0;
+    color: #333;
+    font-size: 20px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 20%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
