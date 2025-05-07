@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6a6e042c20bca5787bff0745fc20463799603a13
 :root {
   --clr-primary: #3b82f6;
   --clr-secondary: #10b981;
@@ -187,6 +190,7 @@ button:hover {
 #results .result {
   margin-bottom: 1rem;
 }
+<<<<<<< HEAD
 
 
 
@@ -274,4 +278,21 @@ body.auth-page {
 }
 .auth-card .legal a:hover {
   text-decoration: underline;
+=======
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+>>>>>>> 6a6e042c20bca5787bff0745fc20463799603a13
 }

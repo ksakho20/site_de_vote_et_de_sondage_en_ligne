@@ -11,6 +11,7 @@ if (!is_dir($dir)) mkdir($dir, 0755);
 
 // Récupère les données structurées
 $title     = trim($_POST['title']     ?? '');
+$description = trim($_POST['description'] ?? ''); // Ajoute la description
 $questions = $_POST['questions']      ?? [];
 $options   = $_POST['options']        ?? [];
 
@@ -23,6 +24,7 @@ if (!$title || !is_array($questions) || empty($questions)) {
 $poll = [
   'id'        => $id = uniqid('poll_'),
   'title'     => $title,
+  'description' => $description,
   'questions' => []
 ];
 

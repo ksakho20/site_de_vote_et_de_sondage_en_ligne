@@ -35,6 +35,11 @@ $poll = json_decode(file_get_contents($file), true);
 
   <!-- Contenu principal -->
   <main class="site-main container">
+    <!-- Affichage de la description -->
+    <div class="card">
+        <h2>Description</h2>
+        <p><?= nl2br(htmlspecialchars($poll['description'])) ?></p>
+    </div>
     <div class="card">
       <h1><?= htmlspecialchars($poll['title']) ?></h1>
       <form id="vote-form">
