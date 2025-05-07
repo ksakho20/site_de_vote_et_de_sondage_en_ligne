@@ -34,7 +34,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      &copy; 2025 Mon Sondagiste
+      &copy; 2025 Mon SiteDeVote • <a href="#">Mentions légales</a>
     </div>
   </footer>
 </body>

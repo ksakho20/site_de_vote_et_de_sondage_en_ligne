@@ -83,7 +83,7 @@
 
     <footer class="site-footer">
         <div class="container">
-        <p>&copy; 2025 Mon Sondagiste • <a href="#">Mentions légales</a></p>
+        <p>&copy; 2025 Mon SiteDeVote • <a href="#">Mentions légales</a></p>
         </div>
     </footer>
 </body>

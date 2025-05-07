@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
-    background: url('../img/realiser-un-sondage.jpg') no-repeat center center fixed;
+    background: url('../img/image1.png') no-repeat center center fixed;
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -62,3 +62,5 @@ button {
 button:hover {
     background: #0056b3;
 }
+
+

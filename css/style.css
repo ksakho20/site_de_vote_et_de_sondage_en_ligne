@@ -1,6 +1,4 @@
-h1{
-  di
-}
+
 :root {
   --clr-primary: #3b82f6;
   --clr-secondary: #10b981;
@@ -15,7 +13,7 @@ h1{
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family: var(--font-sans);
-  background: rgb(133, 124, 124);
+  background: url('../img/image1.png') no-repeat center center fixed;
   color: var(--clr-gray-dark);
   line-height: 1.6;
 }
@@ -188,4 +186,92 @@ button:hover {
 
 #results .result {
   margin-bottom: 1rem;
+}
+
+
+
+/* 1. Page auth : fond + overlay */
+body.auth-page {
+  margin: 0;
+  height: 100vh;
+  background: url('../img/hero-survey.png') center/cover no-repeat;
+  position: relative;
+  font-family: var(--font-sans);
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* 2. Container de centrage */
+.auth-container {
+  position: relative; /* au-dessus de l’overlay */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+/* 3. Card formulaire */
+.auth-card {
+  background: var(--clr-white);
+  padding: 2rem;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.auth-card h2 {
+  margin-bottom: 1.5rem;
+  color: var(--clr-primary);
+  text-align: center;
+}
+
+.auth-card label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--clr-gray-light);
+  border-radius: 4px;
+}
+
+.auth-card button {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  opacity: 0.9;
+}
+
+.auth-card .legal {
+  font-size: 0.8rem;
+  color: var(--clr-gray-dark);
+  margin-top: 1rem;
+  text-align: center;
+}
+.auth-card .legal a {
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+.auth-card .legal a:hover {
+  text-decoration: underline;
 }

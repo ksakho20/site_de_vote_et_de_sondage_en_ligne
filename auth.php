@@ -12,30 +12,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Connexion</title>
-        <link rel="stylesheet" href="css/styleauto.css"> 
-    </head>
-    <body>
-        <h1 class="titre-principal">Bienvenue dans notre site de sondage</h1>
-        <h2 class="titre-secondaire">Connexion</h2>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Sondagiste • Connexion</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
 
-        <p>Entrez votre identifiant pour vous connecter.</p>
-        <form method="post" action="auth.php">
-            <label for="username">Nom d'utilisateur :</label><br>
-            <input type="text" id="username" name="username" required><br><br>
+  <!-- Calque sombre au-dessus du background -->
+  <div class="auth-overlay"></div>
 
-            <label for="password">Mot de passe :</label><br>
-            <input type="password" id="password" name="password" required><br><br>
+  <!-- Formulaire centré -->
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Connexion</h2>
+      <form action="auth.php" method="post">
+        <label for="user">Nom d’utilisateur :</label>
+        <input type="text" id="user" name="user" required>
 
-            <button type="submit">Se connecter</button>
-        </form>
+        <label for="pass">Mot de passe :</label>
+        <input type="password" id="pass" name="pass" required>
 
-        <footer class="site-footer">
-            <div class="container">
-            <p>&copy; 2025 Mon Sondagiste • <a href="#">Mentions légales</a></p>
-            </div>
-        </footer>
-    </body>
+        <button type="submit">Se connecter</button>
+      </form>
+      <p class="legal">&copy; 2025 Mon Sondagiste • <a href="about.php">Mentions légales</a></p>
+    </div>
+  </div>
+
+</body>
 </html>
+
