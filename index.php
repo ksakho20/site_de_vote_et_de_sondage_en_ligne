@@ -34,6 +34,16 @@
                     placeholder="Entrez le titre" 
                     required>
                 </div>
+                <!-- 2️⃣ Champ description -->
+                <div class="field">
+                    <label for="description">Description du sondage :</label>
+                    <textarea 
+                    name="description" 
+                    id="description" 
+                    placeholder="Entrez la description du sondage" 
+                    rows="4" 
+                    required></textarea>
+                </div>
 
                 <!-- 2️⃣ Bloc questions dynamique -->
                 <div id="questions-container">
