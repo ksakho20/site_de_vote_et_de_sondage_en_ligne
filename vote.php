@@ -1,28 +1,23 @@
 <?php
 header('Content-Type: application/json');
-
-$id     = $_POST['id']      ?? '';
-$choice = isset($_POST['choice']) ? (int)$_POST['choice'] : null;
+$id     = $_POST['id']           ?? '';
+$choices= $_POST['choices']      ?? [];
 $file   = __DIR__ . "/data/{$id}.json";
 
-if (!$id || $choice === null || !file_exists($file)) {
-    http_response_code(400);
-    echo json_encode(['status'=>'error','message'=>'Données invalides.']);
-    exit;
+if (!$id || !file_exists($file) || !is_array($choices)) {
+  http_response_code(400);
+  echo json_encode(['status'=>'error','message'=>'Données invalides.']);
+  exit;
 }
 
 $poll = json_decode(file_get_contents($file), true);
 
-// On vérifie que l’option existe
-if (!isset($poll['options'][$choice])) {
-    http_response_code(400);
-    echo json_encode(['status'=>'error','message'=>'Option invalide.']);
-    exit;
+// Pour chaque réponse postée
+foreach ($choices as $qIdx => $optIdx) {
+  if (!isset($poll['questions'][$qIdx]['options'][$optIdx])) continue;
+  $poll['questions'][$qIdx]['options'][$optIdx]['votes']++;
 }
 
-// Incrémentation du vote
-$poll['options'][$choice]['votes']++;
+// Sauvegarde
 file_put_contents($file, json_encode($poll, JSON_PRETTY_PRINT));
-
-// On renvoie le sondage mis à jour
 echo json_encode(['status'=>'success','poll'=>$poll]);

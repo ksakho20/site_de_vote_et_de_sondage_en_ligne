@@ -12,7 +12,7 @@
 <body>
     <header class="site-header">
         <div class="container">
-        <h1 class="site-logo"><a href="index.php">Mon Sondagiste</a></h1>
+        <h1 class="site-logo"><a href="index.php">SiteDeVote</a></h1>
         <nav class="site-nav">
             <a href="index.php">Créer</a>
             <a href="#">À propos</a>
@@ -23,33 +23,32 @@
         <div class="card">
             <h1>Créer un nouveau sondage</h1>
             <form action="create.php" method="post" id="create-form">
-                <div>
-                <label for="title">Titre du sondage :</label>
-                <input type="text" name="title" id="title" required>
-                </div>
-                
                 <div id="questions-container">
-                <label>Questions :</label>
-                <div>
-                    <input type="text" name="questions[]" placeholder="Question 1" required>
+                    <!-- Bloc prototype invisible, cloné par JS -->
+                    <template id="question-template">
+                    <div class="question-block" data-idx="{idx}">
+                        <div class="field">
+                        <label>Question {num} :</label>
+                        <input type="text" name="questions[{idx}]" placeholder="Question {num}" required>
+                        </div>
+                        <div class="options-container">
+                        <div class="field">
+                            <input type="text" name="options[{idx}][]" placeholder="Option 1" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="options[{idx}][]" placeholder="Option 2" required>
+                        </div>
+                        </div>
+                        <button type="button" class="btn-add-option" data-idx="{idx}">Ajouter une option</button>
+                    </div>
+                    </template>
                 </div>
-                </div>
-                <button type="button" id="add-question">Ajouter une question</button>
-                <br><br>
 
-                <div id="options-container">
-                <label>Options :</label>
-                <div>
-                    <input type="text" name="options[]" placeholder="Option 1" required>
-                </div>
-                <div>
-                    <input type="text" name="options[]" placeholder="Option 2" required>
-                </div>
-                </div>
-                <button type="button" id="add-option">Ajouter une option</button>
+                <button type="button" id="add-question">Ajouter une question</button>
                 <br><br>
                 <button type="submit">Créer le sondage</button>
             </form>
+
         </div>
     </main>
 

@@ -35,29 +35,35 @@ $poll = json_decode(file_get_contents($file), true);
 
   <!-- Contenu principal -->
   <main class="site-main container">
-    <!-- Carte de vote -->
     <div class="card">
       <h1><?= htmlspecialchars($poll['title']) ?></h1>
-
       <form id="vote-form">
         <input type="hidden" name="id" value="<?= htmlspecialchars($poll['id']) ?>">
 
-        <?php foreach ($poll['options'] as $idx => $opt): ?>
-          <div class="form-option">
-            <input
-              type="radio"
-              id="opt<?= $idx ?>"
-              name="choice"
-              value="<?= $idx ?>">
-            <label for="opt<?= $idx ?>"><?= htmlspecialchars($opt['label']) ?></label>
-          </div>
+        <?php foreach($poll['questions'] as $qIdx => $question): ?>
+          <fieldset class="question-block">
+            <legend><?= htmlspecialchars($question['label']) ?></legend>
+
+            <?php foreach($question['options'] as $optIdx => $opt): ?>
+              <div class="form-option">
+                <input
+                  type="radio"
+                  id="q<?=$qIdx?>o<?=$optIdx?>"
+                  name="choices[<?=$qIdx?>]" 
+                  value="<?=$optIdx?>" >
+                <label for="q<?=$qIdx?>o<?=$optIdx?>">
+                  <?= htmlspecialchars($opt['label']) ?>
+                </label>
+              </div>
+            <?php endforeach; ?>
+
+          </fieldset>
         <?php endforeach; ?>
 
         <button type="submit">Voter</button>
       </form>
     </div>
 
-    <!-- Carte des résultats -->
     <div class="card">
       <div id="results"></div>
     </div>
