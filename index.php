@@ -15,7 +15,8 @@
         <h1 class="site-logo"><a href="index.php">SiteDeVote</a></h1>
         <nav class="site-nav">
             <a href="index.php">Créer</a>
-            <a href="#">À propos</a>
+            <a href="a_propos.php">À propos</a>
+            <a href="auth.php">Authentification</a>
         </nav>
         </div>
     </header>
@@ -81,9 +82,9 @@
     </main>
 
     <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Mon Sondagiste • <a href="#">Mentions légales</a></p>
-    </div>
-  </footer>
+        <div class="container">
+        <p>&copy; 2025 Mon Sondagiste • <a href="#">Mentions légales</a></p>
+        </div>
+    </footer>
 </body>
 </html>

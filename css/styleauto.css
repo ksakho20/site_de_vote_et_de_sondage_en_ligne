@@ -1,6 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
-    background: url('../realiser-un-sondage') no-repeat center center fixed;
+    background: url('../img/realiser-un-sondage.jpg') no-repeat center center fixed;
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -30,7 +30,7 @@ body {
 
 /* h2 à droite, plus bas */
 .titre-secondaire {
-    text-align: right;
+    text-align: left;
     margin: 20px 30px 10px 0;
     color: #333;
     font-size: 20px;
