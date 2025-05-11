@@ -14,9 +14,9 @@
         <div class="container">
         <h1 class="site-logo"><a href="index.php">SiteDeVote</a></h1>
         <nav class="site-nav">
-            <a href="index.php">Créer</a>
+            <a href="auth.php">Créer</a>
             <a href="a_propos.php">À propos</a>
-            <a href="auth.php">Authentification</a>
+            <a href="index.php">Authentification</a>
         </nav>
         </div>
     </header>
