@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 6a6e042c20bca5787bff0745fc20463799603a13
 :root {
   --clr-primary: #3b82f6;
   --clr-secondary: #10b981;
@@ -190,9 +187,6 @@ button:hover {
 #results .result {
   margin-bottom: 1rem;
 }
-<<<<<<< HEAD
-
-
 
 /* 1. Page auth : fond + overlay */
 body.auth-page {
@@ -278,7 +272,7 @@ body.auth-page {
 }
 .auth-card .legal a:hover {
   text-decoration: underline;
-=======
+}
 textarea {
   width: 100%;
   padding: 10px;
@@ -294,5 +288,4 @@ textarea {
   padding: 15px;
   border-radius: 8px;
   margin-top: 20px;
->>>>>>> 6a6e042c20bca5787bff0745fc20463799603a13
 }
