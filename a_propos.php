@@ -1,41 +1,45 @@
 <?php
-// about.php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon Sondagiste • À propos</title>
+  <title>GoSondage • À propos</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <?php include 'header.php'; ?>
   <header class="site-header">
     <div class="container">
-      <h1 class="site-logo"><a href="index.php">Mon Sondagiste</a></h1>
+      <h1 class="site-logo"><a href="index.php">GoSondage</a></h1>
       <nav class="site-nav">
-        <a href="index.php">Créer</a>
-        <a href="about.php" class="active">À propos</a>
+        <a href="index.php" class="active">Accueil</a>
+        <a href="logout.php">Déconnexion</a>
       </nav>
     </div>
   </header>
-
   <main class="site-main container">
     <div class="card">
-      <h2>À propos de notre site de Vote & de Sondage</h2>
-      <p>Notre Sondagiste est un projet de L3 Informatique à l’Université Sorbonne Paris Nord.</p>
+      <h1>À propos de GoSondage</h1>
+      <p>GoSondage est un petit projet universitaire de création de sondages en ligne, développé en PHP natif, JavaScript (Ajax) et CSS.</p>
+      <h2>Pourquoi ce projet ?</h2>
       <ul>
-        <li><strong>Stack :</strong> PHP natif, JSON pour stocker les sondages, JavaScript (AJAX).</li>
-        <li><strong>Fonctionnalités :</strong> création de sondages multi-questions, vote en temps réel, rafraîchissement périodique.</li>
-        <li><strong>Développement :</strong> structuration en MVC léger, pas de base de données, tout stocké en JSON.</li>
+        <li>Apprendre les interactions client-serveur avec PHP sans base de données.</li>
+        <li>Maîtriser l’AJAX pour une UX fluide.</li>
+        <li>Découvrir la gestion de fichiers JSON et le versioning Git.</li>
       </ul>
-      <p> <strong> Réalisé par : Kaba & Hajar</strong></p>
+      <h2>Technologies utilisées</h2>
+      <ul>
+        <li><strong>PHP 8</strong> : back-end, gestion des sondages en JSON.</li>
+        <li><strong>JavaScript</strong> : form dynamically, Ajax pour le vote et le rafraîchissement des résultats.</li>
+        <li><strong>HTML5 & CSS3</strong> (avec variables CSS et animations) pour le design.</li>
+      </ul>
+      <h2>L’équipe</h2>
+      <p>Réalisé par <strong>Kaba SAKHO</strong> et <strong>Hajar BITARI</strong> dans le cadre du cours de Programmation Web L3 à l’USPN.</p>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      &copy; 2025 Mon SiteDeVote • <a href="#">Mentions légales</a>
-    </div>
-  </footer>
+  <?php include 'footer.php'; ?>
 </body>
 </html>

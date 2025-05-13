@@ -1,5 +1,4 @@
 <?php
-
 // log de la méthode dans la console du serveur
 file_put_contents('php://stdout', "▶ METHOD=" . ($_SERVER['REQUEST_METHOD'] ?? 'NULL') . "\n");
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -12,6 +11,7 @@ if (!is_dir($dir)) mkdir($dir, 0755);
 // Récupère les données structurées
 $title     = trim($_POST['title']     ?? '');
 $description = trim($_POST['description'] ?? ''); // Ajoute la description
+$closeRaw    = trim($_POST['close']       ?? '');
 $questions = $_POST['questions']      ?? [];
 $options   = $_POST['options']        ?? [];
 
@@ -20,11 +20,18 @@ if (!$title || !is_array($questions) || empty($questions)) {
     die('Il faut un titre et au moins une question.');
 }
 
+// Vérifie que date de clôture est bien au format datetime-local et future
+$closeTs = strtotime($closeRaw);
+if (!$closeRaw || $closeTs === false || $closeTs <= time()) {
+    die('Date de clôture invalide (doit être une date future).');
+}
+
 // Prépare la structure
 $poll = [
   'id'        => $id = uniqid('poll_'),
   'title'     => $title,
   'description' => $description,
+  'close'       => $closeTs,
   'questions' => []
 ];
 
@@ -33,7 +40,6 @@ foreach ($questions as $idx => $qLabel) {
     $qLabel = trim($qLabel);
     if ($qLabel === '') continue;
     $opts = [];
-    // Parcours des options de cette question
     foreach ($options[$idx] ?? [] as $optLabel) {
         $optLabel = trim($optLabel);
         if ($optLabel === '') continue;
@@ -48,9 +54,9 @@ foreach ($questions as $idx => $qLabel) {
     ];
 }
 
-// Sauvegarde JSON
+// 4. Sauvegarde au format JSON
 file_put_contents("$dir/{$id}.json", json_encode($poll, JSON_PRETTY_PRINT));
 
-// Redirection
+// 5. Redirection vers la page de vote
 header("Location: sondage.php?id={$id}");
 exit;

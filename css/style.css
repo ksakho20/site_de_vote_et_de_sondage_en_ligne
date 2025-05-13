@@ -289,3 +289,65 @@ textarea {
   border-radius: 8px;
   margin-top: 20px;
 }
+
+/* pour sondage.php*/
+.poll-list {
+  list-style: none;
+  padding: 0;
+}
+.poll-list li {
+  margin-bottom: 1.5rem;
+}
+.poll-list a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.poll-list a:hover {
+  text-decoration: underline;
+}
+
+/* Message de sondage clôturé */
+.closed-msg {
+  padding: 1rem;
+  background: var(--clr-gray-light);
+  color: var(--clr-gray-dark);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Toast de confirmation */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-secondary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animation « pulse » pour la barre votée */
+@keyframes pulse {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(1.05); }
+  100% { transform: scaleX(1); }
+}
+.bar-inner.pulse {
+  animation: pulse 0.6s ease;
+}
+
+/* Style lorsque le form est désactivé */
+form#vote-form.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
