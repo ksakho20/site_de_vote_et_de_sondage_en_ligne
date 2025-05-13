@@ -16,7 +16,7 @@
         <nav class="site-nav">
             <a href="auth.php">Créer</a>
             <a href="a_propos.php">À propos</a>
-            <a href="index.php">Authentification</a>
+            <a href="index.php">Connéxion</a>
         </nav>
         </div>
     </header>
