@@ -31,9 +31,10 @@ session_start();
       </ul>
       <h2>Technologies utilisées</h2>
       <ul>
-        <li><strong>PHP 8</strong> : back-end, gestion des sondages en JSON.</li>
-        <li><strong>JavaScript</strong> : form dynamically, Ajax pour le vote et le rafraîchissement des résultats.</li>
         <li><strong>HTML5 & CSS3</strong> (avec variables CSS et animations) pour le design.</li>
+        <li><strong>JavaScript</strong> : form dynamically, Ajax pour le vote et le rafraîchissement des résultats.</li>
+        <li><strong>PHP 8</strong> : back-end, gestion des sondages en JSON.</li>
+
       </ul>
       <h2>L’équipe</h2>
       <p>Réalisé par <strong>Kaba SAKHO</strong> et <strong>Hajar BITARI</strong> dans le cadre du cours de Programmation Web L3 à l’USPN.</p>

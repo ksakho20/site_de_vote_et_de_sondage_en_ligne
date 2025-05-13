@@ -86,7 +86,7 @@ if (!isset($_SESSION['authenticated'])) {
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025  Notre GoSondage • <a href="about.php">À propos</a></p>
+      <p>&copy; 2025  Notre GoSondage • <a href="a_propos.php">À propos</a></p>
     </div>
   </footer>
 </body>
